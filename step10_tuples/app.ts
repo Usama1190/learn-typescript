@@ -28,3 +28,6 @@ const passingResponse: [string, number] = ['{}', 200];
 
 /* If you hover over the two variable names you can see the difference between
 an array ( (string | number)[] ) and the tuples ( [string, number] ). */
+
+
+/*  */
