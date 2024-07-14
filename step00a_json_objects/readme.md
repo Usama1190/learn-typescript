@@ -30,7 +30,7 @@ JSON Data
 
 // JSON data
 
-"name":"Vipin"
+"name": "Vipin"
 
 4. JSON data requires double quotes for the key.
 
@@ -83,7 +83,10 @@ console.log(detail.name);           // Vipin
 
 // JSON object
 
-const detail = { "name": "Vipin", "age": 21 }
+const detail = { 
+    "name": "Vipin", 
+    "age": 21 
+}
 
 // accessing JSON data
 

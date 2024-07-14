@@ -1,1 +1,3 @@
-Strong Typing
+Strong Typing 
+
+Read Everday Types

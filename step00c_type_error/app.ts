@@ -1,3 +1,3 @@
-let message = "Hello World";      // type error
+// let message = "Hello World";
 
-// console.loger(message);
+// console.loger(message);       // Type Error

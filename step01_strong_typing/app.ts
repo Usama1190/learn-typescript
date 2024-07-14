@@ -1,21 +1,18 @@
-// strongly typed syntax
+// Strongly Type Syntax
 
-let a : string = "Pakistan";
-
+let a: string = "Pakistan";
 a = "USA";
 
-let b : number = 9;
+let b: number = 9;
 
-let c : boolean = true;
+let c: boolean = true;
 
-// type interface
+
+// Type Inferecne
 
 let e = "USA";
-
 let f = 10.9;
-
 f = 22;
 
 let g = false;
-
 g = true;

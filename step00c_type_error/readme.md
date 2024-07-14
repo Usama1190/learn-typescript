@@ -1,6 +1,10 @@
-Syntax Error
-	tsc app.ts
-The Output:
+Type Error
+
+To compile the TypeScript file, run the following command
+
+tsc app.ts
+
+The Output will be
 
 	app.ts:2:9 - error TS2551: Property 'loger' does not exist on type 'Console'. Did you mean 'log'?
 
@@ -14,3 +18,5 @@ The Output:
 
 
 	Found 1 error in app.ts:2
+
+Note that a .js file has been generated but it is not valid

@@ -1,3 +1,5 @@
 let message = "Hello World";
 
-// message = 6;        // assignability error
+// message = 6;      // Assignibility Error
+
+console.log(message);
