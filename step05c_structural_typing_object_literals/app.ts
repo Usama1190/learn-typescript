@@ -57,10 +57,10 @@ ball = tube;
 // or misspelled properties should not be silently lost.
 
 
-let myType = { name: 'Usama', id: 1 }
+// let myType = { name: 'Usama', id: 1 }
 
 // Case 1
-myType = { id: 2, name: 'Tom' }
+// myType = { id: 2, name: 'Tom' }
 
 // Case 1: can only assign a type which has the same properties object literals 
 //         can only have properties that exist in contextual type.
@@ -76,10 +76,10 @@ myType = { id: 2, name: 'Tom' }
 // are permitted in with fresh objects:
 
 
-var x: { id: number, [x: string]: any }
+// var x: { id: number, [x: string]: any }
 // Note now "x" can have any name, just that the porperty should be of type string.
 
-x = { id: 1, fullname: 'Usama' }; // Ok `fullname` matched by index signature.
+// x = { id: 1, fullname: 'Usama' }; // Ok `fullname` matched by index signature.
 
 
 // Case 3
@@ -88,3 +88,66 @@ x = { id: 1, fullname: 'Usama' }; // Ok `fullname` matched by index signature.
 
 
 // =============================================================================
+
+
+// Case when STALE object literal are assigned to a variable 
+
+// let myType2 = { id: 2, name: 'Tom' }
+
+// Case 1
+// myType = myType2;
+// Case 1: can only assige a type which has the same properties, rule same for 
+//         fresh and stale object
+
+
+// Case 2a
+// let myType3 = { id: 2, name_person: 'Tom' };
+// Case 2a: 
+// myType = myType3; // Case 2: Error, renamed or missing property, rule same 
+//          for fresh and stale object
+
+
+// Case 2b
+// A type can include an index signature to explicitly indicate that excess properties
+// are permitted in with fresh objects.
+
+// var x: { id: number, [x: string]: any };
+// Note now x can have any name, just that the property should be of type string
+
+// var y = { id: 2, fullname: 'Usama' };
+
+// x = y; // Ok, `fullname` matched by index signature
+
+// var myType4 = { id: 2, name: 'Usama', age: 21 };
+
+// Case 3
+// myType = myType4;
+// Case 3: Ok excess property allowed in case of stale object which is different
+//         from fresh object.
+
+
+
+
+
+
+
+
+
+/*
+var x: { foo: number };
+// x = { foo: 1, bax: 2 };  // Error, excess property `baz`
+
+var y: { foo: number, bar?: number };
+// y = { foo: 2, baz: 1 }  // Error, excess or misspelled property `baz`.
+
+
+var a: { foo: number };
+var a1 = { foo: 1, baz: 2 };
+
+a = a1; // No Error
+
+
+var z: { foo: number, bar?: number };
+var z1 = { foo: 1, baz: 2 };
+z = z1;  // No Error
+*/
