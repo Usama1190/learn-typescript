@@ -41,4 +41,50 @@ ball = tube;
 // verify their equality.
 
 
+
 // ========================================================================
+
+// Now lets do it case by case
+
+// case when "FRESH" object literal are assigned to a variable.
+
+// Rule when a fresh object literal is assigned to a variable and passed for a 
+// parameter of a non-empty target type, it is an error for the object literal
+// to specify properties that don't exist in the target type.
+
+// The rationale for the below two errors is that since the fresh types of the 
+// object literals are never captured in variable, static knowledge of the excess
+// or misspelled properties should not be silently lost.
+
+
+let myType = { name: 'Usama', id: 1 }
+
+// Case 1
+myType = { id: 2, name: 'Tom' }
+
+// Case 1: can only assign a type which has the same properties object literals 
+//         can only have properties that exist in contextual type.
+
+
+// Case 2a
+// myType = { id: 2, name_person: 'Tom' }
+// Case 2a: Error, renamed or missing property
+
+
+// Case 2b
+// A type can include an index signature to explicitly indicate that excess properties
+// are permitted in with fresh objects:
+
+
+var x: { id: number, [x: string]: any }
+// Note now "x" can have any name, just that the porperty should be of type string.
+
+x = { id: 1, fullname: 'Usama' }; // Ok `fullname` matched by index signature.
+
+
+// Case 3
+// myType = { id: 2, name: 'Usama', age: 21 };  // Case 3: Error excess property.
+
+
+
+// =============================================================================
