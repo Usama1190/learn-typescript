@@ -1,3 +1,3 @@
-<!-- Default Parameters
+Default Parameters
 
-TypeScript Default Parameters -->
+TypeScript Default Parameters
