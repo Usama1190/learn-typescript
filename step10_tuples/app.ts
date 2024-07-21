@@ -40,4 +40,41 @@ if(passingResponse[1] === 200) {
 }
 
 // This means TypeScript will provide the correct types at the right index, and
-// even raise an error
+// even raise an error if you try to access an object at an un-declared index.
+
+// passingResponse[2];
+
+// A tuple can feel like a good pattren for short bits of connected data or for
+// fixtures
+
+type StaffAccount = [ number, string, string, string?];
+
+const staff: StaffAccount[] = [
+    [0, 'Adankwo', 'adankwo.e@'],
+    [1, 'Kanokwan', 'kanokwan.s@'],
+    [0, 'Aneurin', 'aneurin.s@', 'Supervisor']
+];
+
+/* When you have a set of known types at the beginning of a tuple and then an 
+unknown length, you can use the spread operator to indicate that it can have 
+any length and the extra indexes will be of a particular type: */
+
+
+type PayStubs = [StaffAccount, ...number[]];
+
+const payStubs: PayStubs[] = [
+    [staff[0], 250],
+    [staff[1], 250, 260],
+    [staff[0], 300, 300, 300]
+];
+
+
+const monthOnePayments = payStubs[0][1] + payStubs[1][1] + payStubs[2][1];
+const monthTwoPayments = payStubs[1][2] + payStubs[2][2];
+const monthThreePayments = payStubs[2][2];
+
+
+/* You can use tuples to describe functions which take an undefined number 
+of parameters with types. */
+
+// declare function calculatePayForEmployee() {}
