@@ -30,4 +30,14 @@ const passingResponse: [string, number] = ['{}', 200];
 an array ( (string | number)[] ) and the tuples ( [string, number] ). */
 
 
-/*  */
+/* As an array, the order is not important so an item at any index could be
+either a string or a number. In the tuple the order and length are guarenteed. */
+
+if(passingResponse[1] === 200) {
+    const localInfo = JSON.parse(passingResponse[0]);
+    console.log(localInfo);
+    
+}
+
+// This means TypeScript will provide the correct types at the right index, and
+// even raise an error
