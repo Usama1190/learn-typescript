@@ -111,10 +111,39 @@ class Greeter {
 property.ts(2540) */
 // console.log(u);
 
+// type annotation (: type)
+
 
 
 
 // 3. Constructors
+/*
+class Point {
+    x: number;
+    y: number;
+
+    // Normal signature with default
+    constructor(x = 0, y = 0) {
+        this.x = x;
+        this.y = y;
+    }
+}
+*/
+
+
+/*
+class Point {
+    x: number;
+    y: number;
+
+    // Constructor Overloads
+    constructor(x: number, y: number)
+    constructor(xy: string)
+    constructor(x: string | number, y: number = 0) {
+        // Code logic here
+    }
+}
+*/
 
 
 

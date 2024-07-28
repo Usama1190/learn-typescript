@@ -13,10 +13,3 @@ https://dev.to/kevin_odongo35/object-oriented-programming-with-typescript-574o
 
 
 _________________________________________________________________________
-
-classes
-1. syntax
-2. class members
-3. constructor
-4. definite assignment assertion operator
-5: type annotation (: type)
